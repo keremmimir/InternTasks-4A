@@ -1,4 +1,4 @@
-package com.example.interntasks_4a
+package com.example.interntasks_4a.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,5 +18,4 @@ class CharacterDetailFragment : Fragment() {
         binding = FragmentCharacterDetailBinding.inflate(layoutInflater)
         return binding.root
     }
-
 }

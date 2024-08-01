@@ -1,4 +1,4 @@
-package com.example.interntasks_4a
+package com.example.interntasks_4a.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

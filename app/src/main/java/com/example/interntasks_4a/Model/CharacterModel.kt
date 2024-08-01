@@ -1,4 +1,4 @@
-package com.example.interntasks_4a
+package com.example.interntasks_4a.Model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
