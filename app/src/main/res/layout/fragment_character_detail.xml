@@ -61,12 +61,10 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/hogwartsHouseText"
                 app:layout_constraintEnd_toStartOf="@+id/nickname"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread" />
+                app:layout_constraintTop_toTopOf="@+id/nickname" />
 
             <TextView
                 android:id="@+id/hogwartsHouseText"
@@ -77,11 +75,10 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/interpretedByText"
                 app:layout_constraintEnd_toStartOf="@+id/hogwartsHouse"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nicknameText" />
+                app:layout_constraintTop_toTopOf="@+id/hogwartsHouse" />
 
             <TextView
                 android:id="@+id/interpretedByText"
@@ -92,11 +89,10 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/childrenText"
                 app:layout_constraintEnd_toStartOf="@+id/interpretedBy"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hogwartsHouseText" />
+                app:layout_constraintTop_toTopOf="@+id/interpretedBy" />
 
             <TextView
                 android:id="@+id/childrenText"
@@ -107,76 +103,80 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/birthdateText"
                 app:layout_constraintEnd_toStartOf="@+id/children"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/interpretedByText" />
+                app:layout_constraintTop_toTopOf="@+id/children" />
 
             <TextView
                 android:id="@+id/nickname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/constant_nickname"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/nicknameText"
-                app:layout_constraintTop_toTopOf="@+id/nicknameText" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/hogwartsHouse"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/constant_hogwartsHouse"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/hogwartsHouseText"
-                app:layout_constraintTop_toTopOf="@+id/hogwartsHouseText" />
+                app:layout_constraintTop_toBottomOf="@+id/nickname" />
 
             <TextView
                 android:id="@+id/interpretedBy"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/constant_interpretedBy"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/interpretedByText"
-                app:layout_constraintTop_toTopOf="@+id/interpretedByText" />
+                app:layout_constraintTop_toBottomOf="@+id/hogwartsHouse" />
 
             <TextView
                 android:id="@+id/children"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/constant_children"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/childrenText"
-                app:layout_constraintTop_toTopOf="@+id/childrenText" />
+                app:layout_constraintTop_toBottomOf="@+id/interpretedBy" />
 
             <TextView
                 android:id="@+id/birthdate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/constant_birthdate"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/birthdateText"
-                app:layout_constraintTop_toTopOf="@+id/birthdateText" />
+                app:layout_constraintTop_toBottomOf="@+id/children" />
 
             <TextView
                 android:id="@+id/birthdateText"
@@ -187,11 +187,8 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/birthdate"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/childrenText" />
+                app:layout_constraintTop_toTopOf="@+id/birthdate" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

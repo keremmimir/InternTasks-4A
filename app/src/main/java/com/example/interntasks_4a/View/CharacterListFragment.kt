@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.interntasks_4a.Adapter.CharacterAdapter
 import com.example.interntasks_4a.Model.CharacterModel
 import com.example.interntasks_4a.ViewModel.CharacterViewModel
@@ -18,6 +19,7 @@ class CharacterListFragment : Fragment() {
     private var _binding: FragmentCharacterListBinding? = null
     private val binding get() = _binding!!
     private val viewModel: CharacterViewModel by viewModels()
+    private lateinit var adapter: CharacterAdapter
     val characterList = ArrayList<CharacterModel>()
 
     override fun onCreateView(
@@ -31,16 +33,24 @@ class CharacterListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observerData()
+        adapter = CharacterAdapter(characterList)
+        binding.recylerView.adapter = adapter
+
         viewModel.getData()
+        observerData()
     }
 
     fun observerData(){
         viewModel.characters.observe(viewLifecycleOwner, Observer { character ->
             character?.let {
-                characterList.addAll(character)
-                val adapter = CharacterAdapter(characterList)
-                binding.recylerView.adapter = adapter
+                characterList.clear()
+                characterList.addAll(it)
+                adapter.notifyDataSetChanged()
+
+                adapter.onClick = { characterModel ->
+                    val action = CharacterListFragmentDirections.actionCharacterListFragmentToCharacterDetailFragment(character = characterModel)
+                    findNavController().navigate(action)
+                }
             }
         })
         viewModel.error.observe(viewLifecycleOwner, Observer { errorMessage ->
