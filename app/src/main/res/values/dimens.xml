@@ -3,7 +3,15 @@
     //margin
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_xlarge">64dp</dimen>
 
     //string
     <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_large">27sp</dimen>
+    <dimen name="text_xlarge">32sp</dimen>
+    <dimen name="text_xxlarge">50sp</dimen>
+
+    //cardView
+    <dimen name="radius">16sp</dimen>
 </resources>

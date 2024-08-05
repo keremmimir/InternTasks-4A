@@ -8,6 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardView"
         android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_medium"
@@ -16,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="@dimen/margin_medium">
+        app:cardCornerRadius="@dimen/radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -39,9 +40,11 @@
                 android:id="@+id/characterName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/constant_fullName"
+                android:textColor="@color/white"
+                android:fontFamily="@font/harry_potter_font"
                 android:textStyle="bold"
-                android:textSize="@dimen/text_medium"
+                android:textSize="@dimen/text_large"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">InternTasks-4A</string>
+
+    <string name="nicknameText">Nickname :</string>
+    <string name="hogwartsHouseText">Hogwart House :</string>
+    <string name="interpretedByText">Interpreted By :</string>
+    <string name="childrenText">Children :</string>
+    <string name="birthdateText">Birth Date :</string>
+
+    //constantText
+    <string name="constant_fullName">Harry James Potter</string>
+    <string name="constant_nickname">Harry</string>
+    <string name="constant_hogwartsHouse">Gryffindor</string>
+    <string name="constant_interpretedBy">Daniel Radcliffe</string>
+    <string name="constant_children">James Sirius Potter, Albus Severus Potter, Lily Luna Potter</string>
+    <string name="constant_birthdate">Jul 31, 1980</string>
 </resources>

@@ -9,13 +9,19 @@ import com.example.interntasks_4a.databinding.FragmentCharacterDetailBinding
 
 class CharacterDetailFragment : Fragment() {
 
-    private lateinit var binding: FragmentCharacterDetailBinding
+    private  var _binding: FragmentCharacterDetailBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCharacterDetailBinding.inflate(layoutInflater)
+        _binding = FragmentCharacterDetailBinding.inflate(inflater,container,false)
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

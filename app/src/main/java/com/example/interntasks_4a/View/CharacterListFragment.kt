@@ -15,7 +15,8 @@ import com.example.interntasks_4a.databinding.FragmentCharacterListBinding
 
 class CharacterListFragment : Fragment() {
 
-    private lateinit var binding: FragmentCharacterListBinding
+    private var _binding: FragmentCharacterListBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: CharacterViewModel by viewModels()
     val characterList = ArrayList<CharacterModel>()
 
@@ -23,7 +24,7 @@ class CharacterListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCharacterListBinding.inflate(layoutInflater)
+        _binding = FragmentCharacterListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,6 +34,7 @@ class CharacterListFragment : Fragment() {
         observerData()
         viewModel.getData()
     }
+
     fun observerData(){
         viewModel.characters.observe(viewLifecycleOwner, Observer { character ->
             character?.let {
@@ -46,5 +48,10 @@ class CharacterListFragment : Fragment() {
                 Log.e("CharacterFragment", "Error: $it")
             }
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
